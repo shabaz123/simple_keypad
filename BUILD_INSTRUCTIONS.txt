@@ -1,0 +1,18 @@
+Windows (using PowerShell):
+
+Release build:
+
+.\build.ps1
+
+or
+
+.\build.ps1 Release
+
+Debug build:
+
+.\build.ps1 basic Debug
+
+CLEAN BUILD:
+Delete the relevant build folder first, e.g.
+
+Remove-Item -Recurse -Force build-pico-Release
