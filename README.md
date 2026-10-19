@@ -28,7 +28,7 @@ All three 74HC595s operate at 3.3 V, with common ground to the Pico. Connect **`
 
 Connect as shown here:
 
-![Keypad circuit](keypad_circuit.jpg)
+![Keypad circuit](keypad_circuit.png)
 
 The three chips share GP8 (shift clock), GP10 (`/SR_CLR`) and GP11 (latch clock). Their VCC pins (16) go to 3.3 V, and GND pins (8) go to ground.
 
