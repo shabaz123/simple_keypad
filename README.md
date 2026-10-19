@@ -1,6 +1,6 @@
 # Simple Keypad with LEDs
 
-This repository contains the circuit diagram, and a test program (tested on Pi Pico) for scanning up to **16 buttons** and driving up to **eight indicator LEDs** using three daisy-chained **74HC595** shift registers. Note: search on AliExpress for a ready-made 3 x 74HC595 board, and then all you need are switches, diodes and a few resistors. 
+This repository contains the circuit diagram, and a test program (tested on Pi Pico) for scanning up to **16 buttons** and driving up to **eight indicator LEDs** using three daisy-chained **74HC595** shift registers. Note: search on AliExpress for a ready-made 3 x 74HC595 board, and then all you need are switches, diodes and a few resistors. The buttons used for the prototype are google'able using the search term "PB86 switch".
 
 The first two 74HC595s select buttons one at a time. A common switch/diode sense line is read by the microcontroller. The third 74HC595, appended at the far end of the serial chain, drives the LEDs. The test program reports the two button bytes over USB serial and cycles the LEDs through binary values 0–7.
 
