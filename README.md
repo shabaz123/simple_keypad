@@ -50,11 +50,15 @@ The third (last) 74HC595 drives the three LEDs:
 
 As shown in the circuit, use a **separate current-limiting resistor for each LED**. The suggested resistor is 1k, because that usually provides plenty of indicator brightness with modern LEDs.
 
+## Building the Code
+
+The simple demo uses the Pi Pico, and uses the Pi Pico SDK. Ensure you have the SDK installed and then you can build this project in the usual manner (depends on if you use VS Code, command line, and so on). If you happen to use PowerShell on Windows, then the build.ps1 script can be used (you may need to edit it,  possibly change paths, to suit your PC setup). Once the .uf2 file has been built, transfer it to the Pi Pico in the usual was as with any other Pi Pico project.
+
 ## Test operation
 
 1. Power the Pico and the 74HC595s from the same 3.3 V logic supply, with a common ground.
 2. Build and flash the Pico SDK test program.
-3. Open the Pico's USB serial output. The program prints the two scanned button bytes, for example:
+3. Open the Pico's USB serial output using any serial terminal software. The program prints the two scanned button bytes, for example:
 
    ```text
    val: 0x00 0x01
