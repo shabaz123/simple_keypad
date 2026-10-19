@@ -44,9 +44,9 @@ The third (last) 74HC595 drives the three LEDs:
 
 | LED bit | 74HC595 output | Chip pin |
 |---|---|---:|
-| Bit 0 (least significant) | Q0 | **15** |
-| Bit 1 | Q1 | **1** |
-| Bit 2 | Q2 | **2** |
+| Bit 0 (least significant) | QA | **15** |
+| Bit 1 | QB | **1** |
+| Bit 2 | QC | **2** |
 
 As shown in the circuit, use a **separate current-limiting resistor for each LED**. The suggested resistor is 1k, because that usually provides plenty of indicator brightness with modern LEDs.
 
