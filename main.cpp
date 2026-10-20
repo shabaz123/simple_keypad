@@ -35,9 +35,7 @@
 #define LED_GPIO      25
 
 // Hardware config
-#define INPUT_BLOCKS     2
-#define MAP_KEY_BYTENUM 0
-#define MAP_KEY_INDEX   1
+#define INPUT_BLOCKS  2
 #define OUTPUT_BLOCKS 1
 
 // Helpers
@@ -67,7 +65,6 @@ void board_init(void) {
     gpio_init(SER_DAT_GPIO); gpio_set_dir(SER_DAT_GPIO, GPIO_OUT);
     gpio_init(SR_CLK_GPIO); gpio_set_dir(SR_CLK_GPIO, GPIO_OUT);
     gpio_init(SW_DATA_GPIO); gpio_set_dir(SW_DATA_GPIO, GPIO_IN);
-    // gpio_pull_down(SW_DATA_GPIO); // uncomment if there's no pull-down resistor
     gpio_init(R_CLK_GPIO); gpio_set_dir(R_CLK_GPIO, GPIO_OUT);
 
     sleep_ms(100); // let any attached hardware settle
@@ -119,7 +116,6 @@ uint8_t io_scan_once(uint8_t* btn_arr, uint8_t* out_arr) {
             } else {
                 gpio_put(SER_DAT_GPIO, 0);
             }
-            //NS32_DELAY; NS32_DELAY; NS32_DELAY; NS32_DELAY;
             SR_CLK_PULSE;
             bitmask = bitmask >> 1;
         }
@@ -130,7 +126,6 @@ uint8_t io_scan_once(uint8_t* btn_arr, uint8_t* out_arr) {
             SR_CLK_PULSE;
         }
     }
-    //NS32_DELAY; NS32_DELAY; NS32_DELAY; NS32_DELAY;
     R_CLK_PULSE;
 
     return(0);
@@ -157,7 +152,6 @@ int main(void) {
                 leds_pattern = 0;
             }
         }
-        //leds_pattern = 0x07; // test
         io_scan_once(btn_arr, &leds_pattern);
         printf("val: 0x%02x 0x%02x\n", btn_arr[1], btn_arr[0]);
         sleep_ms(100);
