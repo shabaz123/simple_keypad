@@ -14,12 +14,12 @@ The GPIO numbers below are **GP numbers**, not physical header-pin numbers.
 |---|---:|---|---:|
 | **GP7** | **10** | Serial data (`SER_DAT` / DS) to first 595 | 14 |
 | **GP8** | **11** | Shift clock (`SR_CLK` / SHCP), shared by all 595s | 11 |
-| **GP9** | **12** | Button sense input (`SW_DATA`), from common switch/diode line | — |
+| **GP9** | **12** | Button sense input (`SW_DATA`), from common switch/diode line | n/a |
 | **GND** | **13** | Common ground | 8 |
 | **GP10** | **14** | Active-low shift-register clear (`/SR_CLR`), shared by all 595s | 10 |
 | **GP11** | **15** | Output latch clock (`R_CLK` / STCP), shared by all 595s | 12 |
 | **3V3(OUT)** | **36** | 3.3 V supply for the 595s | 16 |
-| **GP25** | Onboard only | Original Pico's built-in status LED | — |
+| **GP25** | n/a | Original Pico's built-in status LED | n/a |
 
 
 All three 74HC595s operate at 3.3 V, with common ground to the Pico. Connect **`/OE` (pin 13) to GND** on each 595 to enable its outputs. The program drives `/SR_CLR` high during normal operation.
